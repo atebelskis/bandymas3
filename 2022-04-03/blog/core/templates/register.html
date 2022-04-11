@@ -1,0 +1,39 @@
+login page {% extends 'base.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% block content %}
+<div id="myModal">
+	<div class="modal-login">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Member Register</h4>
+			</div>
+			<div class="modal-body">
+				<form  method="post">
+                   {% csrf_token %}
+					<div class="form-group">
+
+						{% bootstrap_form form %}
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="/login/">Already have an account yet? Log in </a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

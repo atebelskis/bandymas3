@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{% block content %}
+
+<div>
+    <div >
+        <div class="modal-content">
+            <form method="post">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Post</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        {% bootstrap_form form %}
+                    </div>
+
+                <div class="modal-footer">
+                    <a href="/" type="button" class="btn btn-default" data-dismiss="modal" > Cancel </a>
+                    <input type="submit" class="btn btn-success" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
